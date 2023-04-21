@@ -403,6 +403,9 @@ ul {
   font-size: 16px;
   line-height: 1.5;
 }
+.second-footer-container {
+  margin-right: 120px;
+}
 .title-social-media {
   margin-bottom: 16px;
   font-weight: 500;
@@ -417,7 +420,6 @@ ul {
 }
 .footer .footer-container {
   display: flex;
-  gap: 120px;
   align-items: baseline;
 }
 
@@ -592,8 +594,11 @@ ul {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+
+  transition: background-color var(--animation), color var(--animation);
 }
-.modal-btn:hover {
+.modal-btn:hover,
+.modal-btn:focus {
   background-color: var(--ocean);
   color: var(--white);
 }
