@@ -141,7 +141,7 @@ ul {
   border: 2px solid var(--ocean);
   border-radius: 2px;
 }
-.navigation .link.current .address {
+.address {
   font-style: normal;
 }
 .address > .list {
