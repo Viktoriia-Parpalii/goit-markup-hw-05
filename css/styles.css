@@ -121,7 +121,8 @@ ul {
   gap: 40px;
 }
 
-.navigation a {
+.navigation .link {
+  position: relative;
   padding: 24px 0;
   font-weight: 500;
   font-size: 16px;
@@ -130,6 +131,17 @@ ul {
 
   transition: color var(--animation);
 }
+
+.navigation .link.current::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  border: 2px solid var(--ocean);
+  border-radius: 2px;
+}
+
 .address {
   font-style: normal;
 }
@@ -484,13 +496,41 @@ ul {
   letter-spacing: 0.02em;
   color: var(--slate);
 }
-.description {
+.portfolio-wrapper {
   padding: 32px 16px;
   border-left: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   border-right: 1px solid var(--border);
 }
+.portfolio-box {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  transform: translateY(100%);
+
+  width: 100%;
+  height: 100%;
+
+  padding-top: 40px;
+  padding-right: 32px;
+  padding-left: 32px;
+
+  background-color: var(--iris);
+
+  transition: transform var(--animation);
+}
+.portfolio-icon:hover .overlay,
+.portfolio-icon:focus .overlay {
+  transform: translateY(0);
+}
+.overlay-descr {
+  color: var(--cloud);
+}
 .portfolio-link {
   transition: box-shadow var(--animation);
 }
@@ -510,11 +550,15 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
+
   opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 
   background-color: var(--bg-backdrop);
 
-  transition: opacity var(--animation);
+  transition: opacity var(--animation), visibility var(--animation),
+    pointer-events var(--animation);
 }
 .backdrop.is-hidden {
   opacity: 0;
