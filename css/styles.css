@@ -141,8 +141,7 @@ ul {
   border: 2px solid var(--ocean);
   border-radius: 2px;
 }
-
-.address {
+.navigation .link.current .address {
   font-style: normal;
 }
 .address > .list {
@@ -230,7 +229,8 @@ ul {
 .navigation a:hover,
 .navigation a:focus,
 .address a:hover,
-.address a:focus {
+.address a:focus,
+.navigation .link.current {
   color: var(--ocean);
 }
 /* Section 1 */
