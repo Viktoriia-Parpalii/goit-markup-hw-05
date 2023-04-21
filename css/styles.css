@@ -526,8 +526,8 @@ ul {
 
   transition: transform var(--animation);
 }
-.portfolio-icon:hover .overlay,
-.portfolio-icon:focus .overlay {
+.portfolio-link:hover .overlay,
+.portfolio-link:focus .overlay {
   transform: translateY(0);
 }
 .overlay-descr {
